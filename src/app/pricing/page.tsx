@@ -1,0 +1,6 @@
+import { PageHero } from "@/components/PageHero";
+import type { Metadata } from "next"; import Link from "next/link"; import { Check } from "lucide-react"; import { packages } from "@/data/packages"; import { Cta } from "@/components/Cta";
+export const metadata: Metadata = { title: "Pricing", description: "Website development packages from INQUATO. Request a quotation." };
+export default function Pricing() { return (<><PageHero kind="pricing" title="Website packages" text="Choose a starting point and we&apos;ll tailor a quotation. Domain and hosting costs are separate where applicable." /><section className="wrap py-14">
+  <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{packages.map((p) => (<div key={p.name} className={`card flex flex-col ${p.highlight ? "border-brand ring-1 ring-brand" : ""}`}><h2 className="text-lg font-semibold">{p.name}</h2><p className="mt-1 text-sm text-mute">{p.tagline}</p><p className="mt-5 text-lg font-semibold">{p.priceLabel}</p>
+    <ul className="my-6 flex-1 space-y-2 text-sm">{p.features.map((f) => <li key={f} className="flex gap-2"><Check className="h-4 w-4 shrink-0 text-brand" />{f}</li>)}</ul><Link href={`/contact?service=${encodeURIComponent("Business Website Development")}`} className={p.highlight ? "btn-p" : "btn-s"}>Request a quotation</Link></div>))}</div></section><Cta /></>); }

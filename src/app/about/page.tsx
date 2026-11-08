@@ -1,0 +1,11 @@
+import { PageHero } from "@/components/PageHero";
+import type { Metadata } from "next"; import { Cta } from "@/components/Cta"; import { site } from "@/config/site";
+export const metadata: Metadata = { title: "About", description: "About INQUATO, a Sri Lankan digital solutions company." };
+const team = [{ name: "[Name]", role: "[Role]" }, { name: "[Name]", role: "[Role]" }, { name: "[Name]", role: "[Role]" }];
+const values = [["Clarity", "Plain language and honest timelines."], ["Quality", "Careful work that lasts."], ["Partnership", "We succeed when you grow."], ["Practicality", "Solutions sized to your business."]];
+export default function About() { return (<><PageHero kind="about" title="About INQUATO" text="{site.description}" />
+  <section className="wrap grid gap-6 pb-16"><div className="card"><h2 className="font-semibold">Our story</h2><p className="mt-2 text-mute">[OUR STORY PLACEHOLDER] Add your founding story here.</p></div>
+    <div className="card grid gap-6 md:grid-cols-2"><div><h2 className="font-semibold">Mission</h2><p className="mt-2 text-mute">Help growing businesses use technology to work better and reach more customers.</p></div><div><h2 className="font-semibold">Vision</h2><p className="mt-2 text-mute">To be a trusted digital partner for businesses in Sri Lanka and beyond.</p></div></div></section>
+  <section className="wrap pb-16"><h2 className="h2">Core values</h2><div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{values.map(([t, d]) => <div key={t} className="card"><h3 className="font-semibold">{t}</h3><p className="mt-2 text-sm text-mute">{d}</p></div>)}</div></section>
+  <section className="wrap pb-16"><h2 className="h2">Our approach</h2><p className="mt-4 max-w-2xl text-mute">We start with your goals, plan in the open, show progress often and support you after launch.</p></section>
+  <section className="wrap pb-20"><h2 className="h2">Team</h2><div className="mt-8 grid gap-4 sm:grid-cols-3">{team.map((m, i) => <div key={i} className="card"><div className="mb-4 aspect-square rounded-xl bg-neutral-100" /><p className="font-semibold">{m.name}</p><p className="text-sm text-mute">{m.role}</p></div>)}</div></section><Cta /></>); }

@@ -1,0 +1,8 @@
+import type { Project } from "@/types";
+// All entries are INQUATO concept/demonstration work, not client projects. Replace with real work when available.
+export const projects: Project[] = [
+  { slug: "restaurant-ordering", title: "Restaurant Ordering Concept", category: "Web Application", kind: "Concept project", summary: "Menu browsing and table ordering concept for restaurants.", description: "A concept showing how a restaurant could take orders from a QR code at the table and send them to the kitchen.", tech: ["Next.js", "Supabase"], features: ["QR table ordering", "Kitchen order view", "Menu management"] },
+  { slug: "hotel-booking", title: "Boutique Hotel Website Concept", category: "Business Website", kind: "Concept project", summary: "Room showcase with enquiry and booking request flow.", description: "A concept website for a small hotel, focused on clear rooms, location and direct booking requests.", tech: ["Next.js", "Tailwind CSS"], features: ["Room gallery", "Booking request form", "Local SEO"] },
+  { slug: "school-portal", title: "School Management Demo", category: "Management System", kind: "Demonstration project", summary: "Demo of student, class and notice management.", description: "A demonstration of how a school could manage students, classes and announcements in one place.", tech: ["React", "PostgreSQL"], features: ["Student records", "Notices", "Role-based access"] },
+  { slug: "online-store", title: "Online Store Demo", category: "E-commerce", kind: "Demonstration project", summary: "Demo storefront with catalogue and cart.", description: "A demonstration storefront showing product browsing, cart and order flow.", tech: ["Next.js", "Stripe"], features: ["Catalogue", "Cart", "Order dashboard"] },
+];
